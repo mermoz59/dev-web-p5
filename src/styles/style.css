@@ -43,7 +43,8 @@ body {
 }
 
 .social-link img {
-	width: 20px;
+    width: 20px;
+    aspect-ratio: auto 1 / 1;
 }
 
 #about {
@@ -72,8 +73,8 @@ body {
 }
 
 .picture img {
-	width: 100%;
-
+    width: 100%;
+    aspect-ratio: auto 500 / 499;
 }
 #about-me {
 	flex: 2
@@ -170,6 +171,10 @@ body {
 	bottom: 0;
 	left: 0;
 	z-index: 0;
+}
+
+.carousel-item img {
+    aspect-ratio: auto 7 / 3;
 }
 
 #services .container {
