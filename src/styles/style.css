@@ -1,6 +1,9 @@
-body {
+main {
 	max-width: 1920px;
-	margin: auto;
+	margin: 0;
+}
+body {
+	margin: 0;
 }
 * {
 	font-family: 'Inter';
@@ -17,7 +20,11 @@ body {
 	padding-block: 30px;
 	align-items: center;
 }
-
+.top-header a {
+	text-decoration: none;
+	cursor: pointer;
+	color: #000;
+}
 .top-header .name {
 	font-size: 26px;
 }
@@ -102,7 +109,8 @@ body {
 	border-radius:0 ;
 }
 .nav-pills .nav-link {
-	color: #000
+	color: #000;
+	cursor: pointer;
 }
 .item-column {
 	position: relative;
