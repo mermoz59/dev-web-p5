@@ -28,16 +28,17 @@ const config = {
   },
   output: {
     path: path.resolve(__dirname, './docs'),
-    filename: '[name].bundle.js',
+    filename: '[name].[chunkhash].bundle.js',
     publicPath: '',
-    assetModuleFilename: './src/assets/[name][ext]',
+    assetModuleFilename: './src/assets/[name].[contenthash].[ext]',
     clean: true
   },
   devServer: {
-    port: 8090,
-    compress: false,
-    static: {
-      directory: path.join(__dirname, '/')
+    port: 3000,
+    compress: true,
+    static: './docs',
+    headers: {
+      'Cache-Control': 'max-age=31536000'
     }
   },
   plugins: [
@@ -104,7 +105,7 @@ const config = {
         }
       }
     },
-    // minimize: true // If you want to run it also in development set the optimization.minimize option to true:
+    minimize: true, // If you want to run it also in development set the optimization.minimize option to true:
     minimizer: [
       // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
       // `...`,
