@@ -61,7 +61,8 @@ const config = {
     // https://webpack.js.org/plugins/copy-webpack-plugin/
     new CopyPlugin({
       patterns: [
-        { from: 'robots.txt', to: 'robots.txt' }
+        { from: 'robots.txt', to: 'robots.txt' },
+        { from: 'serve.json', to: 'serve.json' }
       ]
     })
   ],
