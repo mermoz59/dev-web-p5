@@ -6,5 +6,19 @@ import './styles/style.css'
 // eslint-disable-next-line no-unused-vars
 import { Carousel } from 'bootstrap'
 
-import './components/maugallery'
-import './components/scripts'
+const options = {
+  columns: {
+    xs: 1,
+    sm: 2,
+    md: 3,
+    lg: 3,
+    xl: 3
+  },
+  lightBox: true,
+  lightboxId: 'myAwesomeLightbox',
+  showTags: true,
+  tagsPosition: 'top',
+  navigation: true
+}
+
+require('./components/gallery')(options)

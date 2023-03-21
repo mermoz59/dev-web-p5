@@ -16,7 +16,7 @@ const PATHS = {
 
 const sharedHtmlWebpackConf = name => {
   const result = name === 'index' ? {} : { chunks: ['main'] }
-  result.favicon = path.resolve(__dirname, './nina.webp')
+  result.favicon = path.resolve(__dirname, './camera.webp')
   result.template = path.resolve(__dirname, `./src/html/${name}.html`)
   result.filename = `${name}.html`
   return result
@@ -28,17 +28,16 @@ const config = {
   },
   output: {
     path: path.resolve(__dirname, './docs'),
-    filename: '[name].[chunkhash].bundle.js',
+    filename: '[name].bundle.js',
     publicPath: '',
-    assetModuleFilename: './src/assets/[name].[contenthash].[ext]',
+    assetModuleFilename: './src/assets/[name][ext]',
     clean: true
   },
   devServer: {
-    port: 3000,
-    compress: true,
-    static: './docs',
-    headers: {
-      'Cache-Control': 'max-age=31536000'
+    port: 8090,
+    compress: false,
+    static: {
+      directory: path.join(__dirname, '/')
     }
   },
   plugins: [
@@ -52,11 +51,6 @@ const config = {
     new webpack.DefinePlugin({
       DEBUG: process.env.NODE_ENV === 'development',
       VERSION: JSON.stringify(require('./package.json').version)
-    }),
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery'
     }),
     // https://webpack.js.org/plugins/copy-webpack-plugin/
     new CopyPlugin({
@@ -106,7 +100,7 @@ const config = {
         }
       }
     },
-    minimize: true, // If you want to run it also in development set the optimization.minimize option to true:
+    // minimize: true // If you want to run it also in development set the optimization.minimize option to true:
     minimizer: [
       // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
       // `...`,

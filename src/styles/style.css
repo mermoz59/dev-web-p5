@@ -79,6 +79,9 @@ body {
 #about-me {
 	flex: 2
 }
+#about-me .about-me__introduction {
+	font-size: 1rem !important;
+}
 .about-me__title {
 	margin-top: 1em;
 	margin-bottom: 60px;
@@ -103,7 +106,7 @@ body {
 }
 .nav-pills .nav-link.active-tag, .nav-pills .show > .nav-link {
 	color: #fff;
-	background-color: #BEB45A;
+	background-color: #5E5926;
 	border-radius:0 ;
 }
 .nav-pills .nav-link {
@@ -220,6 +223,9 @@ body {
 .form-container {
 	flex : 2;
 
+}
+.form-container .title_form_container {
+	font-size: 1.5rem !important;
 }
 form {
 	display: flex;
