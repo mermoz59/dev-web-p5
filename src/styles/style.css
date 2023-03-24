@@ -1,3 +1,33 @@
+@font-face {
+	font-family: 'Inter';
+	font-display: swap;
+	src: local('Inter'),
+		url('./Inter.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Spectral-ExtraBoldItalic';
+	font-weight: 800;
+	font-style: italic;
+	font-display: swap;
+	src: local('Spectral-ExtraBoldItalic'),
+		url('./Spectral-ExtraBoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Spectral-italic';
+	font-style: italic;
+	font-display: swap;
+	src: local('Spectral-Italic'),
+		url('./Spectral-Italic.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Spectral';
+	font-display: swap;
+	src: local('Spectral-Regular'),
+		url('./Spectral-Regular.woff2') format('woff2');
+}
 body {
 	max-width: 1920px;
 	margin: auto;
@@ -88,9 +118,9 @@ body {
 	font-size: 30px;
 }
 .about-me__introduction {
-	font-family: 'Spectral';
-	font-weight: 800;
-	font-style: italic;
+	font-family: 'Spectral-ExtraBoldItalic';
+	/* font-weight: 800;
+	font-style: italic; */
 	width: 60%;
 }
 #about-me p {
@@ -142,20 +172,20 @@ body {
 }
 
 .quote {
-	font-family: 'Spectral';
-	font-style: italic;
+	font-family: 'Spectral-italic';
+	/* font-style: italic; */
 	width: 70%;
 	margin: auto;
 	padding-block: 3em;
 }
 .quote__text {
-	font-family: Spectral;
+	font-family: 'Spectral-italic';
 	font-style: italic;
 	font-weight: 300;
 
 }
 .quote__author {
-	font-family: Spectral;
+	font-family: 'Spectral';
 	font-weight: 800;
 	font-size: 22px;
 }
